@@ -1,6 +1,8 @@
 // bower:scss
 // endbower
 
+@import '../fonts/avenir.css';
+
 .browserupgrade {
   margin: 0.2em 0;
   background: #ccc;
@@ -8,24 +10,156 @@
   padding: 0.2em 0;
 }
 
+html,
 body {
-  background: #fafafa;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: #333;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  // &:before {
+
+  // }
 }
 
+body {
+  background: #fafafa;
+  font-family: Avenir, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #ae7f66;
+  // background-color: rgb(238, 239, 239);
+  overflow: hidden;
+
+  &:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: rgb(238, 239, 239);
+    // opacity: 0.5;
+    // mix-blend-mode: multiply;
+    z-index: -1;
+  }
+}
+
+// body {
+//   margin: 0;
+//   background: url(http://lorempixel.com/1200/1200) no-repeat 0 0 / cover
+// }
+.mancha {
+  mix-blend-mode: multiply;
+  position: absolute;
+  // max-height: 90%;
+}
+.mancha-2 {
+  mix-blend-mode: multiply;
+  position: absolute;
+  // max-height: 90%;
+  right: 0;
+  bottom: 0;
+}
+
+.selo {
+  position: absolute;
+  left: 345px;
+  top: 85px;
+}
+
+// .hero-unit {
+//   margin: 50px auto 0 auto;
+//   width: 300px;
+//   font-size: 18px;
+//   font-weight: 200;
+//   line-height: 30px;
+//   background-color: #eee;
+//   border-radius: 6px;
+//   padding: 60px;
+//   h1 {
+//     font-size: 60px;
+//     line-height: 1;
+//     letter-spacing: -1px;
+//   }
+// }
+
 .hero-unit {
-  margin: 50px auto 0 auto;
-  width: 300px;
-  font-size: 18px;
-  font-weight: 200;
-  line-height: 30px;
-  background-color: #eee;
-  border-radius: 6px;
-  padding: 60px;
-  h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
+  // position: relative;
+  text-align: right;
+  margin: 0 auto;
+  padding: 10% 0;
+  box-sizing: border-box;
+  width: 1024px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+  height: 100%;
+}
+
+.logo {
+  width: 445px;
+  margin-bottom: 100px;
+}
+
+h2 {
+  font-size: 39px;
+  line-height: 1.2;
+  font-weight: 300;
+  margin: 25px 0;
+  // text-align: right;
+}
+
+p {
+  font-size: 29px;
+  font-weight: 300;
+  margin: 25px 0;
+  // text-align: right;
+}
+
+form {
+  width: 556px;
+  // display: inline-block;
+}
+
+input[type="text"] {
+  // display: block;
+  width: 100%;
+  border: 2px solid #ae7f66;
+  box-sizing: border-box;
+  margin: 25px 0;
+  background: none;
+  padding: 0 15px;
+  font: 900 15px/32px Avenir;
+  // line-height: 32px;
+  color:  #ae7f66;
+  outline: none;
+  &:placeholder { /* Firefox 18- */
+    color: pink;
+  }
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: transparentize(#ae7f66, .5);
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: transparentize(#ae7f66, .5);
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: transparentize(#ae7f66, .5);
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: transparentize(#ae7f66, .5);
+}
+
+input[type="submit"] {
+  background: none;
+  border: 0;
+  display: block;
+  margin: auto;
+  width: 100%;
+  font: 900 15px/50px Avenir;
+  text-transform: uppercase;
+  color:  #ae7f66;
+  outline: none;
+  &:hover {
+    // text-shadow: 1px 1px 0px #000;
+    // margin: -1px 1px 1px -1px;
+    background-color: rgba(0, 0, 0, .1)
   }
 }
