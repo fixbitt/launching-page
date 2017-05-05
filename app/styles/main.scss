@@ -15,76 +15,28 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  // &:before {
-
-  // }
 }
 
 body {
   background: #fafafa;
   font-family: Avenir, 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #ae7f66;
-  // background-color: rgb(238, 239, 239);
-  overflow: hidden;
-
-  &:before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background: rgb(238, 239, 239);
-    // opacity: 0.5;
-    // mix-blend-mode: multiply;
-    z-index: -1;
-  }
+  background-color: #eeefef;
+  background-image:
+    url(../images/left-bg.png),
+    url(../images/right-bg.png);
+  background-repeat: no-repeat;
+  background-position: top left, bottom right;
+  background-size: 30% auto, 15% auto;
 }
-
-// body {
-//   margin: 0;
-//   background: url(http://lorempixel.com/1200/1200) no-repeat 0 0 / cover
-// }
-.mancha {
-  mix-blend-mode: multiply;
-  position: absolute;
-  // max-height: 90%;
-}
-.mancha-2 {
-  mix-blend-mode: multiply;
-  position: absolute;
-  // max-height: 90%;
-  right: 0;
-  bottom: 0;
-}
-
-.selo {
-  position: absolute;
-  left: 345px;
-  top: 85px;
-}
-
-// .hero-unit {
-//   margin: 50px auto 0 auto;
-//   width: 300px;
-//   font-size: 18px;
-//   font-weight: 200;
-//   line-height: 30px;
-//   background-color: #eee;
-//   border-radius: 6px;
-//   padding: 60px;
-//   h1 {
-//     font-size: 60px;
-//     line-height: 1;
-//     letter-spacing: -1px;
-//   }
-// }
 
 .hero-unit {
   // position: relative;
   text-align: right;
-  margin: 0 auto;
-  padding: 10% 0;
+  // margin: 0 auto;
+  padding: 10% 15% 10% 30%;
   box-sizing: border-box;
-  width: 1024px;
+  // width: 1024px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
