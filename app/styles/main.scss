@@ -3,6 +3,40 @@
 
 @import '../fonts/avenir.css';
 
+$grid-breakpoints: (
+  xs: 576px,
+  sm: 768px,
+  md: 992px,
+  lg: 1200px
+) !default;
+
+$content-breakpoints: (
+  xs: 576px,
+  sm: 768px,
+  md: 992px,
+  lg: 1200px
+) !default;
+
+// Use media queries like this:
+// @include max(xs) {
+//     .wrapper {
+//         padding-right: $spacing-unit / 2;
+//         padding-left: $spacing-unit / 2;
+//     }
+// }
+@mixin max($device) {
+    $width: map_get($grid-breakpoints, $device);
+    @media screen and (max-width: $width - 1px) {
+        @content;
+    }
+}
+@mixin min($device) {
+    $width: map_get($grid-breakpoints, $device);
+    @media screen and (min-width: $width) {
+        @content;
+    }
+}
+
 .browserupgrade {
   margin: 0.2em 0;
   background: #ccc;
@@ -22,19 +56,29 @@ body {
   font-family: Avenir, 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #ae7f66;
   background-color: #eeefef;
-  background-image:
-    url(../images/left-bg.png),
-    url(../images/right-bg.png);
   background-repeat: no-repeat;
   background-position: top left, bottom right;
-  background-size: 30% auto, 15% auto;
+  background-image:
+    url(../images/left-bg-sm.png),
+    url(../images/right-bg-sm.png);
+  background-size: 45% auto, 50% auto;
+
+  @include min(md) {
+    background-size: 30% auto, 15% auto;
+    background-image:
+      url(../images/left-bg.png),
+      url(../images/right-bg.png);
+  }
+  // @include min(lg) {
+  //   background-size: 30% auto, 15% auto;
+  // }
 }
 
 .hero-unit {
   // position: relative;
   text-align: right;
   // margin: 0 auto;
-  padding: 10% 15% 10% 30%;
+  padding: 10vh 15%;
   box-sizing: border-box;
   // width: 1024px;
   display: flex;
@@ -44,37 +88,62 @@ body {
   height: 100%;
 }
 
+[class*="break"] {
+  display: none;
+}
+
+@include min(lg) {
+  .break-lg {
+    display: initial;
+  }
+}
+@include max(lg) {
+  .break-not-lg {
+    display: initial;
+  }
+}
+
+h1 {
+  margin-bottom: 5vh;
+}
+
 .logo {
-  width: 445px;
-  margin-bottom: 100px;
+  width: calc(100px + 20vw);
+  // margin-bottom: 4vh;
 }
 
 h2 {
-  font-size: 39px;
+  font-size: calc( 5px + 2vh + 1vw);
   line-height: 1.2;
   font-weight: 300;
-  margin: 25px 0;
+  margin: 0;
+  // padding-left: calc( 25vw - 100px);
   // text-align: right;
 }
 
 p {
-  font-size: 29px;
+  font-size: calc( 7px + 1vh + 1vw );
   font-weight: 300;
-  margin: 25px 0;
+  margin: 0;
+  // padding-left: calc( 35vw - 100px);
   // text-align: right;
 }
 
 form {
-  width: 556px;
+  width: 100%;
+  max-width: 556px;
   // display: inline-block;
 }
 
 input[type="text"] {
   // display: block;
   width: 100%;
-  border: 2px solid #ae7f66;
+  border: 1px solid #ae7f66;
+  @include min(md) {
+    border-width: 2px;
+  }
   box-sizing: border-box;
-  margin: 25px 0;
+  margin: 5px 0;
   background: none;
   padding: 0 15px;
   font: 900 15px/32px Avenir;
@@ -105,7 +174,7 @@ input[type="submit"] {
   display: block;
   margin: auto;
   width: 100%;
-  font: 900 15px/50px Avenir;
+  font: 900 15px/30px Avenir;
   text-transform: uppercase;
   color:  #ae7f66;
   outline: none;
