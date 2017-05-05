@@ -123,8 +123,9 @@ h2 {
 
 p {
   font-size: calc( 7px + 1vh + 1vw );
+  line-height: 1.1;
   font-weight: 300;
-  margin: 0;
+  margin: 20px 0;
   // padding-left: calc( 35vw - 100px);
   // text-align: right;
 }
@@ -150,9 +151,8 @@ input[type="text"] {
   // line-height: 32px;
   color:  #ae7f66;
   outline: none;
-  &:placeholder { /* Firefox 18- */
-    color: pink;
-  }
+  appearance: none;
+  border-radius: 0;
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
