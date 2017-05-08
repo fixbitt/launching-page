@@ -1,7 +1,27 @@
 // bower:scss
 // endbower
 
-@import '../fonts/avenir.css';
+// @import '../fonts/avenir.css';
+
+@font-face {
+    font-family: 'Avenir';
+    src: url('../fonts/avenirltstd-black-webfont.woff2') format('woff2'),
+         url('../fonts/avenirltstd-black-webfont.woff') format('woff'),
+         url('../fonts/avenirltstd-black-webfont.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src: url('../fonts/avenirltstd-light-webfont.woff2') format('woff2'),
+         url('../fonts/avenirltstd-light-webfont.woff') format('woff'),
+         url('../fonts/avenirltstd-light-webfont.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+
+}
 
 $grid-breakpoints: (
   xs: 576px,
@@ -144,7 +164,7 @@ form {
   // display: inline-block;
 }
 
-input[type="text"] {
+input[type="email"] {
   // display: block;
   width: 100%;
   border: 1px solid #ae7f66;
@@ -164,6 +184,16 @@ input[type="text"] {
   appearance: none;
   border-radius: 0;
   background-color: #eeefef;
+
+  &.error {
+    border-color: red;
+    + .error-msg {
+      color: red;
+    }
+  }
+  &:not(.error) + .error-msg {
+    display: none;
+  }
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
