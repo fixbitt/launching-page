@@ -1,1 +1,1 @@
-"use strict";
+"use strict";function loadDoc(e){var t=new XMLHttpRequest;return t.onreadystatechange=function(t){4==this.readyState&&(alert(this.responseText),200==this.status&&(e.email.value=""))},t.open("GET","/launching-page",!0),t.send(),!1}function validateEmail(e){return/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(e.value)?(e.classList.remove("error"),!0):(e.focus(),e.className="error",!1)}
