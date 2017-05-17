@@ -21,6 +21,17 @@ function loadDoc(e) {
 
 }
 
+function validateName(name) {
+
+    if ( name.value.length < 3 ) {
+      name.focus();
+      name.className = 'error';
+      return false;
+    }
+    name.classList.remove('error');
+    return true;
+}
+
 function validateEmail(email) {
     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if ( !re.test(email.value) ) {
