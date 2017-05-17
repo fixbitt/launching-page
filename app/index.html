@@ -32,7 +32,9 @@
       <h1><img src="images/fixbitt_logo.svg" class="logo"></h1>
       <h2>Quer se vestir bem&nbsp;<br class="break-not-lg">com exclusividade&nbsp;<br class="break-lg">e&nbsp;<br class="break-not-lg">estilo sem sair de casa?</h2>
       <p>Inscreva-se e seja uma das&nbsp;<br class="break-not-lg">primeiras a&nbsp;<br class="break-lg">receber o melhor&nbsp;<br class="break-not-lg">da moda selecionado&nbsp;<br class="break-lg">por um&nbsp;<br class="break-not-lg">personal stylist para você.</p>
-      <form onsubmit="return validateEmail(this.email) && loadDoc(this);">
+      <form onsubmit="return validateName(this.name) && validateEmail(this.email) && loadDoc(this);">
+        <input type="text" name="name" placeholder="nome">
+        <span class="error-msg">Informe seu nome</span>
         <input type="email" name="email" placeholder="email">
         <span class="error-msg">Informe seu email corretamente</span>
         <input type="submit" value="enviar">
